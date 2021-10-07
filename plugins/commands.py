@@ -36,7 +36,7 @@ ABOUT_TEXT = """--**About Me 😎**--
 
 👥 **Group :** [Developer Team](https://telegram.me/TheDeveloperTeam)
 
-🌐 **Source :** [👉 Click here](https://github.com/AbhijithNT/QRCode-Telegram-bot)
+🌐 **Source :** [👉 Click here](https://github.com/FayasNoushad/QR-Code-bot)
 
 📝 **Language :** [Python3](https://python.org)
 
