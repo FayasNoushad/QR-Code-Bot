@@ -1,0 +1,9 @@
+pyrogram
+tgcrypto
+pyqrcode
+pypng
+pyzbar
+Pillow 
+motor
+aiofiles
+dnspython
