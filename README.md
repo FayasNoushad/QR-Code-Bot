@@ -1,6 +1,6 @@
 # QR-Code-Bot
 
-An advanced QR Code telegram bot with more features.
+An advanced QR Code telegram bot with more features. A modified version of [QR Code Bot Repository](https://github.com/AbhijithNT/QRCode-Telegram-bot).
 
 ---
 
