@@ -19,7 +19,7 @@ License -> https://github.com/FayasNoushad/QR-Code-Bot/blob/main/LICENSE
     2. Broadcast Support
     3. Status Command
     4. Settings Command
-    5. Document of Photo Selection Support
+    5. Document or Photo Selection Support
 
 ---
 
