@@ -1,9 +1,3 @@
-# QR-Code-Bot
-
-An advanced QR Code telegram bot with more features. A modified version of [QR Code Bot Repository](https://github.com/AbhijithNT/QRCode-Telegram-bot).
-
----
-
 ```
 Made with Python3
 (C) @FayasNoushad
@@ -26,7 +20,7 @@ License -> https://github.com/FayasNoushad/QR-Code-Bot/blob/main/LICENSE
 ## Deploy
 
 ```sh
-git clone https://github.com/FayasNoushad/QR-Code-Bot
+git clone https://github.com/FayasNoushad/QR-Code-Bot.git
 cd QR-Code-Bot
 pip3 install -r requirements.txt
 # <Create Variables appropriately>
@@ -50,3 +44,5 @@ python3 main.py
 - [Fayas Noushad](https://github.com/FayasNoushad)
 - [Pyrogram](https://github.com/pyrogram/pyrogram)
 - [Abhijith NT](https://github.com/AbhijithNT) for his [QR Code Bot](https://github.com/AbhijithNT/QRCode-Telegram-bot)
+
+---
