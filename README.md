@@ -1,9 +1,5 @@
-```
-Made with Python3
-(C) @FayasNoushad
-Copyright permission under MIT License
-License -> https://github.com/FayasNoushad/QR-Code-Bot/blob/main/LICENSE
-```
+# QR Code Bot
+A telegram qr code encode and decode bot
 
 ---
 
@@ -17,18 +13,6 @@ License -> https://github.com/FayasNoushad/QR-Code-Bot/blob/main/LICENSE
 
 ---
 
-## Deploy
-
-```sh
-git clone https://github.com/FayasNoushad/QR-Code-Bot.git
-cd QR-Code-Bot
-pip3 install -r requirements.txt
-# <Create Variables appropriately>
-python3 main.py
-```
-
----
-
 ## Variables
 
 - `API_HASH` Your API Hash from my.telegram.org
@@ -39,10 +23,8 @@ python3 main.py
 
 ---
 
-## Credits
+## Other Credits
 
-- [Fayas Noushad](https://github.com/FayasNoushad)
-- [Pyrogram](https://github.com/pyrogram/pyrogram)
 - [Abhijith NT](https://github.com/AbhijithNT) for his [QR Code Bot](https://github.com/AbhijithNT/QRCode-Telegram-bot)
 
 ---
