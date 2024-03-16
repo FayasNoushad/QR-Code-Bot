@@ -6,14 +6,12 @@ from database import db
 START_TEXT = """**Hello {} 😌
 I am a QR Code Bot**
 
->> `I can generate links to QR Code with QR Code decode to links support.`
-
-Made by @FayasNoushad"""
+>> `I can generate text to QR Code with QR Code decode to text support.`"""
 
 HELP_TEXT = """**Hey, Follow these steps:**
 
-➠ Send me a link I will generate the QR code of that link
-➠ Send me a QR code image I will decode that image and convert to link
+➠ Send me a link/text I will generate the QR code of that text
+➠ Send me a QR code image I will decode that image and convert to text
 
 **Available Commands**
 
@@ -22,57 +20,53 @@ HELP_TEXT = """**Hey, Follow these steps:**
 /about - For more about me
 /settings - For bot settings
 /reset - For reset settings
-/status - For bot status
-
-Made by @FayasNoushad"""
+/status - For bot status"""
 
 ABOUT_TEXT = """--**About Me 😎**--
 
 🤖 **Name :** [QR Code Bot](https://telegram.me/{})
 
-👨‍💻 **Developer :** [Fayas](https://github.com/FayasNoushad)
-
-📢 **Channel :** [Fayas Noushad](https://telegram.me/FayasNoushad)
-
-👥 **Group :** [Developer Team](https://telegram.me/TheDeveloperTeam)
+👨‍💻 **Developer :** [GitHub](https://github.com/FayasNoushad) | [Telegram](https://telegram.me/FayasNoushad)
 
 🌐 **Source :** [👉 Click here](https://github.com/FayasNoushad/QR-Code-bot)
 
 📝 **Language :** [Python3](https://python.org)
 
-🧰 **Framework :** [Pyrogram](https://pyrogram.org)
-
-📡 **Server :** [Heroku](https://heroku.com)"""
+🧰 **Framework :** [Pyrogram](https://pyrogram.org)"""
 
 SETTINGS_TEXT = "**Settings**"
 
-FORCE_SUBSCRIBE_TEXT = "<code>Sorry Dear You Must Join My Updates Channel for using me 😌😉....</code>"
-
 START_BUTTONS = InlineKeyboardMarkup(
-        [[
-        InlineKeyboardButton('⚙ Help', callback_data='help'),
-        InlineKeyboardButton('About 🔰', callback_data='about'),
-        InlineKeyboardButton('Close ✖️', callback_data='close')
-        ]]
-    )
+    [
+        [
+            InlineKeyboardButton('⚙ Help', callback_data='help'),
+            InlineKeyboardButton('About 🔰', callback_data='about'),
+            InlineKeyboardButton('Close ✖️', callback_data='close')
+        ]
+    ]
+)
 
 HELP_BUTTONS = InlineKeyboardMarkup(
-        [[
-        InlineKeyboardButton('🏘 Home', callback_data='home'),
-        InlineKeyboardButton('About 🔰', callback_data='about')
+    [
+        [
+            InlineKeyboardButton('🏘 Home', callback_data='home'),
+            InlineKeyboardButton('About 🔰', callback_data='about')
         ],[
-        InlineKeyboardButton('⚒ Settings', callback_data='settings'),
-        InlineKeyboardButton('Close ✖️', callback_data='close')
-        ]]
-    )
+            InlineKeyboardButton('⚒ Settings', callback_data='settings'),
+            InlineKeyboardButton('Close ✖️', callback_data='close')
+        ]
+    ]
+)
 
 ABOUT_BUTTONS = InlineKeyboardMarkup(
-        [[
-        InlineKeyboardButton('🏘 Home', callback_data='home'),
-        InlineKeyboardButton('Help ⚙', callback_data='help'),
-        InlineKeyboardButton('Close ✖️', callback_data='close')
-        ]]
-    )
+    [
+        [
+            InlineKeyboardButton('🏘 Home', callback_data='home'),
+            InlineKeyboardButton('Help ⚙', callback_data='help'),
+            InlineKeyboardButton('Close ✖️', callback_data='close')
+        ]
+    ]
+)
 
 
 @Client.on_callback_query()

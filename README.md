@@ -1,15 +1,17 @@
 # QR Code Bot
-A telegram qr code encode and decode bot
+A telegram QR Code encode and decode bot
 
 ---
 
-## Advanced Features
+## Features
 
-    1. Database ( MongoDB ) Support
-    2. Broadcast Support
-    3. Status Command
-    4. Settings Command
-    5. Document or Photo Selection Support
+    1. QR Code Encoding
+    2. QR Code Decoding
+    3. Database (MongoDB)
+    4. Broadcast
+    5. Status Command
+    6. Settings Command
+    7. Document or Photo Selection
 
 ---
 
@@ -18,8 +20,9 @@ A telegram qr code encode and decode bot
 - `API_HASH` Your API Hash from my.telegram.org
 - `API_ID` Your API ID from my.telegram.org
 - `BOT_TOKEN` Your bot token from @BotFather
-- `BOT_OWNER` Bot owner ID
+- `AUTH_USERS` Authorized users IDs separated by whitespace
 - `DATABASE_URL` MongoDB URL
+- `DATABASE_NAME` Your database name (not required)
 
 ---
 

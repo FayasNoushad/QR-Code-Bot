@@ -2,8 +2,12 @@ import os
 import motor.motor_asyncio
 
 
+DATABASE_URL = os.environ.get("DATABASE_URL")
+DATABASE_NAME = os.environ.get("DATABASE_NAME", "QR-Code-Bot")
+
+
 class Database:
-    def __init__(self, url=os.environ.get("DATABASE_URL"), database_name="FnQRCodeBot"):
+    def __init__(self, url=DATABASE_URL, database_name=DATABASE_NAME):
         self._client = motor.motor_asyncio.AsyncIOMotorClient(url)
         self.db = self._client[database_name]
         self.col = self.db.users

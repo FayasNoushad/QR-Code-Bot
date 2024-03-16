@@ -8,18 +8,26 @@ from database import db
 
 
 QR_BUTTONS = InlineKeyboardMarkup(
-        [[
-        InlineKeyboardButton(text="⚙ Join Updates Channel ⚙", url=f"https://telegram.me/FayasNoushad")
-        ]]
-    )
+    [[InlineKeyboardButton(text="⚙ Feedback ⚙", url=f"https://telegram.me/FayasNoushad")]]
+)
 
 
-@Client.on_message(filters.private & filters.photo)
+@Client.on_message(filters.private & (filters.photo | filters.document))
 async def qr_decode(bot, update):
     if not await db.is_user_exist(update.from_user.id):
         await db.add_user(update.from_user.id)
+    if (update.document) and ("image" not in update.document.mime_type):
+        await update.reply_text(
+            text="Send a QR code image to decode.",
+            quote=True
+        )
+        return
     decode_text = await update.reply_text(text="<b>Processing your request...</b>")
-    dl_location = str(update.from_user.id)
+    if update.photo:
+        name = update.photo.file_id
+    else:
+        name = update.document.file_id
+    dl_location = f"./downloads/{str(update.from_user.id)}/{name}"
     im_dowload = ''
     qr_text = ''
     try:
@@ -38,9 +46,9 @@ async def qr_decode(bot, update):
         await decode_text.edit(text=error)
         return
     await decode_text.edit_text(
-        text=f"Link :- {qr_text}\n\nMade by @FayasNoushad",
+        text=f"Decoded text/link :-\n\n{qr_text}",
       	reply_markup=InlineKeyboardMarkup(
-            [[InlineKeyboardButton(text="⚙ Join Updates Channel ⚙", url=f"https://telegram.me/FayasNoushad")]]
+            [[InlineKeyboardButton(text="⚙ Feedback ⚙", url=f"https://telegram.me/FayasNoushad")]]
         ),
         disable_web_page_preview=True
     )
@@ -50,7 +58,7 @@ async def qr_decode(bot, update):
         print(error)
 
 
-@Client.on_message(filters.regex(pattern=".*http.*") & filters.private)
+@Client.on_message(filters.text & filters.private)
 async def qr_encode(bot, update):
     if not await db.is_user_exist(update.from_user.id):
         await db.add_user(update.from_user.id)
@@ -59,9 +67,18 @@ async def qr_encode(bot, update):
         quote=True
     )
     s = str(update.text)
-    qrname = str(update.from_user.id)
-    qrcode = pyqrcode.create(s)
-    qrcode.png(qrname + '.png', scale=6)
+    qrname = f"./downloads/{str(update.from_user.id)}_qr_code.png"
+    try:
+        qrcode = pyqrcode.create(s.encode('utf-8'))  # Encode the text using UTF-8
+        qrcode.png(qrname + '.png', scale=6)
+    except UnicodeDecodeError:
+        qr.edit_text("Unsupported characters found in the text.")
+        await qr.delete()
+        return
+    except Exception as error:
+        qr.edit_text(error)
+        await qr.delete()
+        return
     img = qrname + '.png'
     as_file = await db.is_as_file(update.from_user.id)
     try:

@@ -3,7 +3,8 @@ tgcrypto
 pyqrcode
 pypng
 pyzbar
-Pillow 
+pyzbar[scripts]
+Pillow
 motor
 aiofiles
 dnspython
